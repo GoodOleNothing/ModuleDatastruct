@@ -4,3 +4,4 @@ from main import *
 tv = Stack()
 def test_push():
     assert tv.push(4) == None
+    assert tv.pop() == 4
