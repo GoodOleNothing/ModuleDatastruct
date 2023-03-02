@@ -7,15 +7,16 @@ class Node:
 class Stack:
     def __init__(self):
         self.top = None
-        self.old_top = []
+        self.old_top = [Node(None, None)]
 
     def push(self, new_data):
         new_node = self.top
         new_top = Node(new_data, new_node)
         self.old_top.append(new_top)
-        self.top = self.old_top[len(self.old_top) - 2]
+        self.top = self.old_top[len(self.old_top) - 1]
+
     def pop(self):
-        self.top = None
+        self.top = self.old_top[len(self.old_top) - 2]
         return self.old_top[len(self.old_top) - 1].data
 
 
@@ -38,14 +39,14 @@ class Stack:
 stack = Stack()
 stack.push('data1')
 data = stack.pop()
-print(stack.top)
+print(stack.top.data)
 print(data)
 
-stack = Stack()
-stack.push('data1')
-stack.push('data2')
-#stack.push('data3')
-#stack.push('data4')
-print(stack.top.data)
-data = stack.pop()
+stack1 = Stack()
+stack1.push('data1')
+stack1.push('data2')
+#stack1.push('data3')
+#stack1.push('data4')
+data = stack1.pop()
+print(stack1.top.data)
 print(data)
