@@ -16,15 +16,14 @@ class Queue:
         self.tail = Node(self.data_list[len(self.data_list) - 1])
 
 
-#queue = Queue()
-#queue.enqueue('data1')
-#queue.enqueue('data2')
-#queue.enqueue('data3')
-#
-#print(queue.head.data)
-#print(queue.head.next_node.data)
-#print(queue.tail.data)
-#print(queue.tail.next_node)
-#print(queue.tail.next_node.data)
+queue = Queue()
+queue.enqueue('data1')
+queue.enqueue('data2')
+queue.enqueue('data3')
+print(queue.head.data)
+print(queue.head.next_node.data)
+print(queue.tail.data)
+print(queue.tail.next_node)
+print(queue.tail.next_node.data)
 
 
