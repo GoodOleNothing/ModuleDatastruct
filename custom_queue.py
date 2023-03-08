@@ -8,12 +8,6 @@ class Queue:
     def __init__(self, head=None, tail=None):
         self.head = head
         self.tail = tail
-    #    self.data_list = []
-#
-    #def enqueue(self, data):
-    #    self.data_list.append(data)
-    #    self.head = Node(self.data_list[0], self.tail)
-    #    self.tail = Node(self.data_list[len(self.data_list) - 1])
 
     def enqueue(self, data):
         if self.tail is None and self.head is None:
