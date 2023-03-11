@@ -4,10 +4,12 @@ class Node:
         self.next_node = next_node
 
 
-class Queue:
+class Queue(Node):
     def __init__(self, head=None, tail=None):
         self.head = head
         self.tail = tail
+        self.losing_head = None
+        super().__init__(Node)
 
     def enqueue(self, data):
         if self.tail is None and self.head is None:
@@ -17,6 +19,14 @@ class Queue:
         self.tail.next_node = Node(data, None)
         self.tail = self.tail.next_node
         return
+
+    def dequeue(self):
+        self.losing_head = self.head.data
+        self.head.data = self.head.next_node.data
+        self.head.next_node.data = self.tail.data
+        self.tail.data = self.tail.next_node
+        return self.losing_head
+
 
 
 queue = Queue()
@@ -28,5 +38,9 @@ print(queue.head.next_node.data)
 print(queue.tail.data)
 print(queue.tail.next_node)
 #print(queue.tail.next_node.data)
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
 
 

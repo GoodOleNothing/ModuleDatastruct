@@ -13,3 +13,11 @@ def test_enqueue():
     assert t_Queue.tail.next_node == None
 
 
+def test_dequeue():
+    t_Queue.enqueue('data3')
+    assert t_Queue.dequeue() == 'data1'
+    assert t_Queue.dequeue() == 'data2'
+    assert t_Queue.dequeue() == 'data3'
+    assert t_Queue.dequeue() == None
+
+
