@@ -10,12 +10,15 @@ class Stack:
         self.old_top = [Node(None, None)]
 
     def push(self, new_data):
+        """метод для добавления данных в стэк"""
         new_node = self.top
         new_top = Node(new_data, new_node)
         self.old_top.append(new_top)
         self.top = self.old_top[len(self.old_top) - 1]
 
     def pop(self):
+        """Метод удаляет из стека верхний элемент (последний добавленный),
+        и возвращает данные удаленного экземпляра класса Node."""
         self.top = self.old_top[len(self.old_top) - 2]
         return self.old_top[len(self.old_top) - 1].data
 

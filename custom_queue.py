@@ -12,6 +12,7 @@ class Queue(Node):
         super().__init__(Node)
 
     def enqueue(self, data):
+        """метод для добавления данных в очередь. """
         if self.tail is None and self.head is None:
             self.tail = self.head = Node(data, None)
             return
@@ -21,6 +22,8 @@ class Queue(Node):
         return
 
     def dequeue(self):
+        """Метод удаляет из очереди крайний левый элемент (первый добавленный),
+        и возвращает данные удаленного экземпляра класса Node."""
         self.losing_head = self.head.data
         self.head.data = self.head.next_node.data
         self.head.next_node.data = self.tail.data
